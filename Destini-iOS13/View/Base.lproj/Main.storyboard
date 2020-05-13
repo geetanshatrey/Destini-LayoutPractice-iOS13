@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14854.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14806.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -14,13 +15,104 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="LQO-cz-K5G">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1gB-4n-47z">
+                                <rect key="frame" x="0.0" y="44" width="414" height="808"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QHk-Xi-Q5X">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="400"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pe1-HJ-DGO">
+                                                <rect key="frame" x="27" y="99" width="360" height="202"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="202" id="3Y7-wM-4Ez"/>
+                                                    <constraint firstAttribute="width" constant="360" id="49Q-Mt-K3v"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Pe1-HJ-DGO" firstAttribute="centerY" secondItem="QHk-Xi-Q5X" secondAttribute="centerY" id="8sf-bL-nxm"/>
+                                            <constraint firstItem="Pe1-HJ-DGO" firstAttribute="centerX" secondItem="QHk-Xi-Q5X" secondAttribute="centerX" id="bKv-UA-DpF"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFd-1X-1HG">
+                                        <rect key="frame" x="0.0" y="408" width="414" height="400"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ier-xa-gge">
+                                                <rect key="frame" x="20" y="115" width="374" height="170"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fb-gK-tAb">
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="5Cj-EA-8fA"/>
+                                                            <constraint firstAttribute="width" constant="374" id="mtJ-0B-GQ3"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                                        <state key="normal" title="Choice 1" backgroundImage="choice1Background">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SzN-KF-FBF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKa-1g-MMU">
+                                                        <rect key="frame" x="0.0" y="90" width="374" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="374" id="W03-BS-bVY"/>
+                                                            <constraint firstAttribute="height" constant="80" id="ZFc-IY-WvE"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                                        <state key="normal" title="Choice 2" backgroundImage="choice2Background">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="choiceMade:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YuI-aN-m1A"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ier-xa-gge" firstAttribute="centerY" secondItem="SFd-1X-1HG" secondAttribute="centerY" id="7xm-O3-Wi7"/>
+                                            <constraint firstItem="ier-xa-gge" firstAttribute="centerX" secondItem="SFd-1X-1HG" secondAttribute="centerX" id="o55-rK-z5X"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="LQO-cz-K5G" secondAttribute="bottom" id="7qm-Lk-VfS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1gB-4n-47z" secondAttribute="bottom" constant="10" id="GrH-NW-pUK"/>
+                            <constraint firstItem="LQO-cz-K5G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JKq-hZ-1ar"/>
+                            <constraint firstItem="1gB-4n-47z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Njg-TK-eFp"/>
+                            <constraint firstItem="LQO-cz-K5G" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="OLt-fD-B5a"/>
+                            <constraint firstItem="1gB-4n-47z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lsI-EC-ky4"/>
+                            <constraint firstItem="1gB-4n-47z" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wCN-3L-NmM"/>
+                            <constraint firstItem="LQO-cz-K5G" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xvB-nk-Jkc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="choice1Button" destination="6Fb-gK-tAb" id="xfz-ty-DKI"/>
+                        <outlet property="choice2Button" destination="lKa-1g-MMU" id="1jb-OH-VmH"/>
+                        <outlet property="storyLabel" destination="Pe1-HJ-DGO" id="gUE-G1-XVG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="958" height="1793"/>
+        <image name="choice1Background" width="1370.6666259765625" height="363"/>
+        <image name="choice2Background" width="1370.6666259765625" height="363"/>
+    </resources>
 </document>
